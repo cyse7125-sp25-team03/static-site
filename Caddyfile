@@ -1,0 +1,10 @@
+:8080 {
+    root * /usr/share/caddy
+    file_server
+    encode gzip
+    
+    # Health check endpoint for probes
+    handle /healthz {
+        respond "OK" 200
+    }
+}
