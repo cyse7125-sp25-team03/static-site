@@ -1,12 +1,9 @@
 node {
-    def tag = ''
     stage('Clone repository') {
         checkout scm
     }
-    stage('Determine Git Tag') {
-        tag = sh(returnStdout: true, script: "git rev-parse --short=10 HEAD").trim()
-    }
     stage('Build and Push multi-platform image') {
+      def tag = sh(returnStdout: true, script: "git rev-parse --short=10 HEAD").trim()
        withCredentials([usernamePassword(credentialsId: 'docker-pat', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_TOKEN')]){
             sh '''
              docker login -u ${DOCKER_USERNAME} -p ${DOCKER_TOKEN}
