@@ -1,6 +1,7 @@
 # static-site
 This repository contains a static HTML website that displays team information.
 ## Project Structure
+
 ```
 static-site/
 ├── Caddyfile     # Configuration for Caddy web server
