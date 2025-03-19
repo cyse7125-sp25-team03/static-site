@@ -1,5 +1,6 @@
 # static-site
 This repository contains a static HTML website that displays team information.
+
 ## Project Structure
 
 ```
